@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Workbench&display=swap');
+
+:root {
+    --amarelo: #F7EC1A;
+    --claro: #F8F8F8;
+    --ciano: #42C1C3;
+    --preto: #090909;
+    --poppins: "Poppins", sans-serif;
+    --titulo: "Anton", sans-serif;
+    --texto-animado: "Workbench", sans-serif;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,7 +18,7 @@
 }
 
 body {
-    background-color: #1C1C1C;
+    background-color: #090909;
 }
 
 
@@ -15,6 +28,12 @@ body {
     background: black;
     z-index: 9999;
     transition: opacity 1s ease-out;
+}
+
+#intro video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -31,8 +50,9 @@ header {
     width: 100%;
     padding: 30px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     justify-items: center;
     z-index: 2;
     transition: 0.8s ease;
@@ -40,6 +60,7 @@ header {
 
 header .logo img{
     width: 200px;
+    margin: 20px;
 }
 
 header:hover {
@@ -71,24 +92,36 @@ header:hover {
 
 .dispatch {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 40%;
-    left: 37%;
+    z-index: 1;
 }
 
 .dispatch img {
-    width: 500px;
+    width: 100%;
 }
 
 /*links*/
+
+header.links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
 
 header a{
     text-decoration: none;
     color: white;
     margin: 10px;
     font-size: 1.5em;
+    margin-top: 20px;
     padding: 10px;
     transition: 1s ease;
     border: 1px solid white;
@@ -105,7 +138,190 @@ header a:hover {
 #about {
     position: relative;
     z-index: 2;
-    background-color: #1C1C1C;
+    background-color: #090909;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#about .sobre-game {
+    width: 500px;
+    padding: 15px;
+    text-align: center;
+}
+
+#about .sobre-game h1 {
+    position: relative;
+    color: var(--amarelo);
+    font-size: 5em;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    
+}
+
+.sobre-game h1::before {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 278px;
+    background: linear-gradient(to left, var(--claro), var(--amarelo), var(--ciano), var(--claro));
+    bottom: 7px;
+}
+
+#about .sobre-game h2 {
+    color: var(--ciano);
+    font-size: 2em;
+    font-family: var(--poppins);
+    font-weight: 600;
+}
+
+#about .sobre-game p {
+    color: var(--claro);
+    font-size: 2;
+    text-align: justify;
+    font-family: var(--poppins);
+}
+
+#about .image {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
+
+#about .image img {
+    max-width: 100%;
+    padding: 15px;
+}
+
+/*Plataformas disponíveis*/
+
+#plataformas {
+    position: relative;
+    margin: auto;
+    background: url(images/terminal_SDN.webp) center/cover no-repeat;
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    overflow: hidden;
+}
+
+#plataformas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.icon {
+    position: relative;
+    z-index: 2;
+}
+
+.icon i{
+    color: var(--claro);
+    font-size: 7em;
+    transition: 1s ease;
+    margin: 20px;
+}
+
+.icon i:hover {
+    color: #088F80;
+    text-shadow: 1px 3px 8px black;
+    transform: scale(1.2);
+}
+
+.links2 {
+    display: flex;
+}
+
+
+/*Plataforma / Texto animado*/
+
+#plataformas .compre{
+    font-size: 1.7em;
+    font-family: var(--texto-animado);
+    text-shadow: 2px 3px 8px black;
+    text-align: center;
+}
+
+.compre span{
+    position: relative;
+    z-index: 2;
+}
+
+.compre span::before{
+    content: "";
+    color: var(--claro);
+    animation: palavras 20s infinite;
+}
+
+.compre span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid #29BEB0;
+    right: -10px;
+    animation: cursor .8s infinite, digita 20s steps(15) infinite;
+    width: calc(100% + 15px);
+    background-color: var(--preto);
+}
+
+@keyframes digita {
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85%{
+        width: calc(100% + 15px);
+    }
+}
+
+@keyframes cursor {
+        0%{
+            border-left: 2px solid var(--preto);
+        }
+}
+
+@keyframes palavras {
+    0%, 20%{
+        content: "Jogue agora!";
+    }
+    21%, 40% {
+        content: "Garanta sua experiência!";
+    }
+    41%, 60%{
+        content: "Disponível agora!";
+    }
+    61%, 80%{
+        content: "Playstation"
+    }
+    81%, 100%{
+        content: "Steam"
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header {
+        justify-content: space-between;
+    }
+
+    #about .sobre-game{
+        text-align: initial;
+    }
+
+    #plataformas .links2 .icon i {
+        font-size: 9em;
+    }
+
+    #plataformas .compre {
+        font-size: 3em;
+    }
 }

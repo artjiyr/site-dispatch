@@ -11,3 +11,4 @@ video.addEventListener("ended", () => {
     }, 1000);
 });
 
+gsap.registerPlugin(ScrollTrigger);
