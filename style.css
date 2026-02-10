@@ -145,6 +145,7 @@ header a:hover {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    box-shadow: 1px -10px 20px 11px rgba(0, 0, 0, 0.304);
 }
 
 #about .sobre-game {
@@ -308,6 +309,8 @@ header a:hover {
     }
 }
 
+
+/*media query pc*/
 @media screen and (min-width: 1024px) {
     header {
         justify-content: space-between;
