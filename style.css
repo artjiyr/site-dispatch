@@ -59,7 +59,8 @@ header {
 }
 
 header .logo img{
-    width: 200px;
+    min-width: 30%;
+    max-width: 200px;
     margin: 20px;
 }
 
@@ -121,16 +122,23 @@ header a{
     color: white;
     margin: 10px;
     font-size: 1.5em;
-    margin-top: 20px;
-    padding: 10px;
+    padding: 10px 5px 10px 10px;
     transition: 1s ease;
     border: 1px solid white;
     border-radius: 10px;
 }
 
+header a.discord {
+    padding-right: 10px;
+}
+
 header a:hover {
     background-color: white;
     color: rgb(0, 0, 0);
+}
+
+header a i{
+    
 }
 
 /*about dispatch*/
@@ -180,6 +188,8 @@ header a:hover {
 }
 
 #about .sobre-game p {
+    padding-right: 20px;
+    padding-left: 20px;
     color: var(--claro);
     font-size: 2;
     text-align: justify;
@@ -252,6 +262,7 @@ header a:hover {
     font-family: var(--texto-animado);
     text-shadow: 2px 3px 8px black;
     text-align: center;
+    background-color: var(--preto);
 }
 
 .compre span{
@@ -309,6 +320,164 @@ header a:hover {
     }
 }
 
+/*trailers*/
+#trailers {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: var(--preto);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+#trailers .trailer-titulo h1{
+    position: relative;
+    font-family: var(--titulo);
+    color: var(--claro);
+    text-align: center;
+    padding: 40px;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+#trailers .trailer-titulo h1::before {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 158px;
+    background: linear-gradient(to left, var(--claro), var(--amarelo), var(--ciano), var(--claro));
+    bottom: 30px;
+}
+
+.cards-trailers{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-bottom: 100px;
+}
+
+.trailer .capa a img{
+    width: 350px;
+    border-radius: 15px;
+    border: 1px solid var(--claro);
+    transition: 1s ease;
+}
+
+.trailer .capa a img:hover{
+    filter: brightness(0.8) brightness(2);
+    border: 2px solid var(--ciano);
+}
+
+/*empresa*/
+
+#empresa {
+    position: relative;
+    background-image: url(images/empresa_background.png);
+    width: 100%;
+    height: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#empresa::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.58);
+    box-shadow: inset 0px 20px 20px 6px black;
+    z-index: 1;
+}
+
+.conteudo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.empresa_imagem img {
+    width: 50%;
+    padding: 30px;
+}
+
+.empresa_texto h1 {
+    color: var(--claro);
+    font-family: var(--poppins);
+    font-weight: 500;
+}
+
+.empresa_texto p{
+    color: var(--claro);
+    font-family: var(--poppins);
+    text-align: justify;
+    padding: 20px;
+    font-weight: 500;
+}
+
+/*footer*/
+
+footer {
+    position: absolute;
+    background-image: url(images/footer_background.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.674);
+    box-shadow: inset 0px 20px 20px 6px black;
+    z-index: 1;
+}
+
+.conteudo_footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.banner img{
+    display: block;
+    margin: auto;
+    width: 90%;
+}
+
+.banner h1 {
+    text-align: center;
+    color: var(--claro);
+    font-family: var(--poppins);
+    font-weight: 400;
+    font-size: 2em;
+    text-shadow: 1px 2px 8px black;
+}
+
+.conteudo_footer .contato p{
+    font-family: var(--poppins);
+    font-size: 1.5em;
+    color: var(--claro);
+}
+
 
 /*media query pc*/
 @media screen and (min-width: 1024px) {
@@ -327,4 +496,88 @@ header a:hover {
     #plataformas .compre {
         font-size: 3em;
     }
+
+    #trailers .trailer-titulo h1{
+    font-size: 4em;
+    }
+
+    #trailers .trailer-titulo h1::before {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 215px;
+    background: linear-gradient(to left, var(--claro), var(--amarelo), var(--ciano), var(--claro));
+    bottom: 30px;
+}
+
+    .cards-trailers{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    }
+
+    .trailer .capa a img{
+    width: 400px;
+    border-radius: 15px;
+    border: 1px solid var(--claro);
+    transition: 1s ease;
+}
+
+#empresa {
+    position: relative;
+    background-image: url(images/empresa_background.png);
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#empresa::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.58);
+    box-shadow: inset 0px 0px 20px 12px rgb(0, 0, 0);
+    z-index: 1;
+}
+
+.conteudo {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    text-align: center;
+    height: 80vh;
+}
+
+.empresa_imagem img {
+    width: 70%;
+    padding: 30px;
+}
+
+.empresa_texto {
+    width: 40%;
+}
+
+.empresa_texto h1 {
+    color: var(--claro);
+    font-family: var(--poppins);
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.empresa_texto p{
+    color: var(--claro);
+    font-family: var(--poppins);
+    text-align: justify;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 1.2em;
+}
 }
