@@ -34,6 +34,11 @@ body {
     background-color: #090909;
 }
 
+#site {
+    visibility: hidden;
+    opacity: 0;
+}
+
 
 #intro {
     position: fixed;
