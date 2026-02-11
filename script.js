@@ -120,7 +120,7 @@ function iniciarAnimacoes() {
         ease: "power3.out"
     });
 
-    gsap.from("footer, .banner h1, .banner img, .contato p, .contato a", {
+    gsap.from("footer, .banner h1, .banner img, .contato p", {
         scrollTrigger: {
             trigger: "footer",
             start: "top 30%"
