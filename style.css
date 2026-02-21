@@ -151,6 +151,7 @@ header a:hover {
 /*about dispatch*/
 
 #about {
+    overflow-x: hidden;
     position: relative;
     z-index: 2;
     background-color: #090909;
@@ -382,6 +383,7 @@ header a:hover {
 /*empresa*/
 
 #empresa {
+    overflow-x: hidden;
     position: relative;
     background-image: url(images/empresa_background.png);
     width: 100%;
