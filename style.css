@@ -30,6 +30,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     background-color: #090909;
     overflow-x: hidden;
@@ -83,7 +87,7 @@ header:hover {
 /*background Vídeo*/
 
 .bgvideo {
-        position: sticky;
+    position: sticky;
     top: 0;
     height: 100vh;
     overflow: hidden;
