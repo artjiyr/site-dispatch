@@ -650,3 +650,14 @@ footer::before {
     color: var(--claro);
 }
 }
+
+.conteudo_footer .contato p a {
+    font-size: 1em;
+    color: var(--ciano);
+    text-decoration: none;
+}
+
+.conteudo_footer .contato p a:hover {
+    color: var(--amarelo);
+    border: none;
+}
