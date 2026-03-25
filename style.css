@@ -155,7 +155,7 @@ header a:hover {
 /*about dispatch*/
 
 #about {
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
     z-index: 2;
     background-color: #090909;
